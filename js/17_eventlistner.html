@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick=function(){
+    //     alert("owl clecked")
+    // }
+
+    // document.getElementById('images').addEventListener('click',function (e){
+    //     console.log("clicked inside the ul");
+    // },false) //here false is for event bublling - bubbling child to parent
+
+    // document.getElementById('owl').addEventListener('click',function (e){
+    //     console.log("clicked on owl");
+    //     //e.stopPropagation() //it will stop from event bubbling i.e cant go to parent ,apply this when it is false only
+    // },false)  // if u run above getelement by images and getelement by owl as value is
+    // //false it will behave like event bubbling i.e first child then parent 
+    // //that is the reason why u will get output as clicked on owl then clicked inside the ul
+
+    // now let us try above to block with true
+    
+    // document.getElementById('images').addEventListener('click',function (e){
+    //     console.log("clicked on ul");
+    // },true)
+
+    // document.getElementById('owl').addEventListener('click',function (e){
+    //     console.log("clicked on owl");
+    // },true) //true is for event capaturing i.e first parent then child
+    // //here op:- clicked on ul
+    // //then clicked on owl i.e
+
+    //now let us try to delete image when clicked
+    document.getElementById('images').addEventListener('click',function (e){
+        //
+        if(e.target.tagName ==='IMG')
+        {
+            let removeit=e.target.parentNode
+            removeit.remove()
+        }
+    })
+
+    // read this before interview
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul>
+        <li>java script</li>
+    </ul>
+</body>
+<script>
+    function addlang(lanhname){
+    const list=document.createElement('li')
+    const addtext=document.createTextNode(`${lanhname}`)
+    list.appendChild(addtext)
+    //document.body.appendChild(list)
+    document.querySelector('ul').appendChild(list)
+    }
+    addlang("java")
+
+    // above is not optimised
+    function optilang(langname){
+        const li=document.createElement('li');
+        //const addText=document.createTextNode(langname)
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('ul').appendChild(li)
+    }
+    optilang('cpp')
+
+    //edit 
+    const edit=document.querySelector("li:last-child")
+    edit.outerHTML ='<li>go lang</li>'
+
+    //remove
+    const del=document.querySelector("li:last-child")
+    del.remove()
+</script>
+</html>

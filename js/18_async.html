@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body >
+    <h1>RAJ</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // after 2sec it will print hii raj
+    // setTimeout(function (){
+    //     console.log("Hii raj");
+    // },2000)
+    
+    //in every two seconds there will be hii raj
+    // setInterval(function (){
+    //     console.log("Hii raj");
+    // },2000)
+
+    
+    setInterval(() => {
+    const textchange=function () {
+        document.querySelector('h1').
+        innerHTML="RAJ is web developer"
+    }
+    setTimeout(textchange,2000)
+    const textchange2=function () {
+        document.querySelector('h1').
+        innerHTML="RAJ is full stack web developer"
+    }
+    setTimeout(textchange2,4000)
+  }, 5000);
+
+    // const changeTest=function(){
+    //     document.querySelector('h1').innerHTML="RAJ is good boy"
+    // }
+
+    // const changeMe=setTimeout(changeTest,2000)
+
+    // //if some one click on stop it should stop
+    // document.querySelector('#stop').
+    // addEventListener('click',function (){
+    //     clearTimeout(changeMe)
+    //     console.log("pressed stop")
+    // })
+
+  
+</script>
+</html>

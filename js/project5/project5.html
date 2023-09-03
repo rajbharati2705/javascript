@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color change</title>
+</head>
+<body>
+    <p>Start should change the background-color every second</p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const randomcolor = function(){
+        const hex='0123456789ABCDEF'
+        let color='#'
+        for(let i=0;i<6;i++){
+            color+=hex[Math.floor(Math.random()*16)]
+        }
+        return color
+    };
+    let intervelId
+
+    const startChangingColor = function(){
+        if(!intervelId)
+        {
+        intervelId=setInterval(changeColor,1000)   
+    }
+        function changeColor(){      
+        document.body.style.backgroundColor=randomcolor()
+        }
+    };
+    const stopChangingColor=function(){
+        clearInterval(intervelId);
+        //dereference intervelId
+        intervelId= null; //if u give this ,this will not start ,so go to 24 line  
+    }
+    document.querySelector('#start').
+    addEventListener('click',startChangingColor)
+    document.querySelector('#stop').
+    addEventListener('click',stopChangingColor)
+    
+</script>
+</html>
